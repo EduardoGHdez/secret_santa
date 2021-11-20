@@ -1,0 +1,10 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+home_alone:
+  slug: "c9c3ec67-fb13-4f5b-8c81-c5cf547fcc8f"
+a_christmas_story:
+  slug: "c131bfc6-0bee-4ef4-9676-137e5dd40961"
