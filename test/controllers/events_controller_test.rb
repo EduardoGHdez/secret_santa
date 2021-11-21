@@ -4,7 +4,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   test "should get show" do
     event = events :home_alone
 
-    get event_url(event.slug)
+    get event_url(event)
     assert_response :success
   end
 
@@ -13,6 +13,6 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
       post events_url
     end
 
-    assert_redirected_to event_url(Event.last.slug)
+    assert_redirected_to event_url(Event.last)
   end
 end

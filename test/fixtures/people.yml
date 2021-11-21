@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+jim:
+  name: "Jim"
+  event: home_alone
+
+pam:
+  name: "Pam"
+  event: a_christmas_story
