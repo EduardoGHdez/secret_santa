@@ -7,3 +7,11 @@ jim:
 pam:
   name: "Pam"
   event: a_christmas_story
+
+michael:
+  name: "Michael"
+  event: home_alone
+
+jan:
+  name: "Jan"
+  event: home_alone

@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   resources :events, only: [:show, :create, :update] do
     resources :people
+    put :draw_names, to: "draw_names#update", on: :member
   end
 end
