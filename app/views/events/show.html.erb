@@ -9,6 +9,10 @@
   <div id="people">
     <%= render @event.persons%>
   </div>
+  <br/>
+  <hr/>
+  <%= render partial: "events/claimed_people_counter",
+    locals: { event: @event, secret_santa_id: session[:secret_santa_id] } %>
 </div>
 
 <p id="notice"><%= notice %></p>

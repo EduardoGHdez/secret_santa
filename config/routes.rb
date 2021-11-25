@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :people
     put :draw_names, to: "draw_names#update", on: :member
   end
+
+  put "people/:person_id/claim", to: "claim_people#update", as: :claim_people
 end
