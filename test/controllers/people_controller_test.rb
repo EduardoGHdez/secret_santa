@@ -1,6 +1,6 @@
 require "test_helper"
 
-class PersonsControllerTest < ActionDispatch::IntegrationTest
+class PeopleControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     event = events :home_alone
 
