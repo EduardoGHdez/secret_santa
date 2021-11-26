@@ -1,18 +1,19 @@
-<div data-controller="event" class="container flex flex-col lg:w-1/2 w-full bg-white shadow rounded px-8 pt-6 pb-8 mb-4 mx-auto">
-  <h1 class="title text-3xl mb-8 mx-auto text-center font-bold text-purple-700"><u>Secret Santa 🎅🏽</u></h1>
-  <%= turbo_stream_from @event %>
-  <%= turbo_frame_tag "new_person", src: new_event_person_path(@event), target: "_top" %>
-  <%= render partial: "draw_names", locals: { event: @event } %>
-  <br/>
-  <hr/>
-  <br/>
-  <div id="people">
-    <%= render @event.persons%>
+<div data-controller="event" class="m-4 w-full max-w-6xl">
+  <div class="border-4 border-gray-800 bg-gray-50 w-full p-4">
+    <div class="">
+      <%= turbo_stream_from @event %>
+      <%= turbo_frame_tag "new_person", src: new_event_person_path(@event), target: "_top" %>
+      <%= render partial: "draw_names", locals: { event: @event } %>
+      <br/>
+      <hr/>
+      <br/>
+      <div id="people">
+        <%= render @event.persons%>
+      </div>
+      <br/>
+      <hr/>
+      <%= render partial: "events/claimed_people_counter",
+        locals: { event: @event, secret_santa_id: session[:secret_santa_id] } %>
+    </div>
   </div>
-  <br/>
-  <hr/>
-  <%= render partial: "events/claimed_people_counter",
-    locals: { event: @event, secret_santa_id: session[:secret_santa_id] } %>
 </div>
-
-<p id="notice"><%= notice %></p>
