@@ -1,0 +1,25 @@
+<div  class="m-4 w-full max-w-6xl">
+  <div class="border-4 border-gray-800 bg-gray-50 w-full p-8 flex flex-col justify-center items-center">
+    <%- if @people.any? { |person| person.secret_santa.blank? } %>
+      <%= image_tag "/images/dwight.gif", height: "auto", width: "500px", class: "border-4 border-gray-800"%>
+      <div class="my-4 p-2 w-full">
+        <p class="text-4xl w-full text-center pt-8">Please, be patient 👉🏼👈🏼
+        <br>The organizer hasn't mixed the names yet</p>
+      </div>
+    <%- else %>
+      <%= image_tag "/images/michael.gif", height: "auto", width: "500px", class: "border-4 border-gray-800"%>
+      <%- if @people.one? %>
+        <div class="my-4 p-2 w-full">
+          <p class="text-4xl w-full text-center pt-8">You'll be gifting to <%= @people.first.secret_santa%> 🎉🥳</p>
+        </div>
+      <%- else%>
+        <%- @people.each do |person| %>
+          <div class="border-4 border-gray-800 my-4 p-2 w-full lg:max-w-lg">
+            <p class="text-4xl w-full text-center pt-8"><%= person.name %> will be gifting to <%= person.secret_santa %></p>
+          </div>
+        <% end %>
+      <% end %>
+      <br>
+    <% end %>
+  </div>
+</div>

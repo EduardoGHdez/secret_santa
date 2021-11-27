@@ -1,21 +1,21 @@
 <%- count = event.persons.claimed(secret_santa_id).count %>
 
 <div id="<%= dom_id event, "#{secret_santa_id}_claimed_people" %>">
-  <br>
-  <%= link_to "#" do %>
-    <div class="flex justify-around">
-      <span class="relative inline-flex shadow-sm">
-        <button type="button" class="inline-flex items-center px-4 py-3 border border-purple-400 leading-6 font-medium text-purple-800 bg-white hover:text-purple-700 focus:border-purple-300 transition ease-in-out duration-150">
-          Find out who you'll be gifting
-        </button>
-        <%- unless count.zero?  %>
+  <%- unless count.zero?  %>
+    <br>
+    <%= link_to event_people_url(event) do %>
+      <div class="flex justify-around">
+        <span class="relative inline-flex shadow-sm">
+          <button type="button" class="inline-flex items-center px-4 py-3 border border-purple-400 leading-6 font-medium text-purple-800 bg-white hover:text-purple-700 focus:border-purple-300 transition ease-in-out duration-150">
+            Find out who you'll be gifting to
+          </button>
           <span class="flex absolute h-8 w-8 top-0 right-0 -mt-4 -mr-4">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-8 w-8 bg-purple-500 text-white justify-center text-xl"><%= count %></span>
           </span>
-      </span>
+        </span>
+      </div>
     <% end %>
-    </div>
   <% end %>
 </div>
 

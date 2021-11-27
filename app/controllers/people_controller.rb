@@ -1,4 +1,8 @@
 class PeopleController < ApplicationController
+  def index
+    @people = event.persons.where(claim_id: session[:secret_santa_id])
+  end
+
   def new
     @person = event.persons.new
   end
